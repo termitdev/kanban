@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils";
 import type { Member } from "@/types/domain";
 
 interface AvatarProps {
-  member?: Member | null;
-  size?: "xs" | "sm" | "md" | "lg";
-  className?: string;
+  member?: Member | null | undefined;
+  size?: "xs" | "sm" | "md" | "lg" | undefined;
+  className?: string | undefined;
 }
 
 const SIZES = {

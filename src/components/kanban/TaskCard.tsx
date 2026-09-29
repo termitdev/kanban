@@ -28,10 +28,10 @@ const isLate = (task: Task) =>
 
 interface Props {
   task: Task;
-  member?: Member;
+  member?: Member | undefined;
   onOpen: (task: Task) => void;
   onAction: (action: string, task: Task) => void;
-  dragging?: boolean;
+  dragging?: boolean | undefined;
 }
 
 export function TaskCard({ task, member, onOpen, onAction, dragging }: Props) {

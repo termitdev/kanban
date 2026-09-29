@@ -25,7 +25,7 @@ const ITEMS = [
   { to: "/board", icon: Settings, label: "Configurações", exact: false, enabled: false },
 ] as const;
 
-export function Sidebar({ userEmail }: { userEmail?: string }) {
+export function Sidebar({ userEmail }: { userEmail?: string | undefined }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [menuOpen, setMenuOpen] = useState(false);
 
