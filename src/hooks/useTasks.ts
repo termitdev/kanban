@@ -122,7 +122,10 @@ export function useUpdateTask() {
       if (patch.tags !== undefined) payload["tags"] = patch.tags;
       if (patch.blocked !== undefined) payload["blocked"] = patch.blocked;
 
-      const { error } = await supabase.from("tasks").update(payload).eq("id", id);
+      const { error } = await supabase
+        .from("tasks")
+        .update(payload as never)
+        .eq("id", id);
       if (error) throw error;
     },
     onMutate: async ({ id, patch }) => {
